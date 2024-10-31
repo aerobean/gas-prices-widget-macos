@@ -1,0 +1,1087 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B34346FE2CCA559E00F95DB2 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B34346FD2CCA559E00F95DB2 /* WidgetKit.framework */; };
+		B34347002CCA559E00F95DB2 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B34346FF2CCA559E00F95DB2 /* SwiftUI.framework */; };
+		B343470E2CCA559F00F95DB2 /* GasPriceWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B34346FB2CCA559E00F95DB2 /* GasPriceWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B34347442CCB934800F95DB2 /* GasPriceWidgetShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B343473A2CCB934800F95DB2 /* GasPriceWidgetShared.framework */; };
+		B343475E2CCB951600F95DB2 /* GasPriceWidgetShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B343473A2CCB934800F95DB2 /* GasPriceWidgetShared.framework */; };
+		B396363B2CD28F7B00707FBB /* GasPriceWidgetShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B343473A2CCB934800F95DB2 /* GasPriceWidgetShared.framework */; };
+		B396363C2CD28F7B00707FBB /* GasPriceWidgetShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B343473A2CCB934800F95DB2 /* GasPriceWidgetShared.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B39636432CD3AD0D00707FBB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B39636422CD3ACFF00707FBB /* .gitignore */; };
+		B39636452CD3ADBB00707FBB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B39636442CD3ADB100707FBB /* README.md */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B34346DB2CCA553A00F95DB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B34346BF2CCA553900F95DB2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B34346C62CCA553900F95DB2;
+			remoteInfo = "Gas prices widget";
+		};
+		B34346E52CCA553A00F95DB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B34346BF2CCA553900F95DB2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B34346C62CCA553900F95DB2;
+			remoteInfo = "Gas prices widget";
+		};
+		B343470C2CCA559F00F95DB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B34346BF2CCA553900F95DB2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B34346FA2CCA559E00F95DB2;
+			remoteInfo = GasPriceWidgetExtension;
+		};
+		B34347452CCB934800F95DB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B34346BF2CCA553900F95DB2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B34347392CCB934800F95DB2;
+			remoteInfo = GasPriceWidgetShared;
+		};
+		B34347472CCB934800F95DB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B34346BF2CCA553900F95DB2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B34346C62CCA553900F95DB2;
+			remoteInfo = "Gas prices widget";
+		};
+		B343474D2CCB934800F95DB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B34346BF2CCA553900F95DB2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B34347392CCB934800F95DB2;
+			remoteInfo = GasPriceWidgetShared;
+		};
+		B39636392CD28DF100707FBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B34346BF2CCA553900F95DB2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B34347392CCB934800F95DB2;
+			remoteInfo = GasPriceWidgetShared;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B34347132CCA559F00F95DB2 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B343470E2CCA559F00F95DB2 /* GasPriceWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B396363D2CD28F7B00707FBB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B396363C2CD28F7B00707FBB /* GasPriceWidgetShared.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B34346C72CCA553900F95DB2 /* Gas prices widget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gas prices widget.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B34346DA2CCA553A00F95DB2 /* Gas prices widgetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gas prices widgetTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B34346E42CCA553A00F95DB2 /* Gas prices widgetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gas prices widgetUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B34346FB2CCA559E00F95DB2 /* GasPriceWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GasPriceWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B34346FD2CCA559E00F95DB2 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		B34346FF2CCA559E00F95DB2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		B343473A2CCB934800F95DB2 /* GasPriceWidgetShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GasPriceWidgetShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B34347432CCB934800F95DB2 /* GasPriceWidgetSharedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GasPriceWidgetSharedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B39636422CD3ACFF00707FBB /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		B39636442CD3ADB100707FBB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B343470F2CCA559F00F95DB2 /* Exceptions for "GasPriceWidget" folder in "GasPriceWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B34346FA2CCA559E00F95DB2 /* GasPriceWidgetExtension */;
+		};
+		B34347542CCB934800F95DB2 /* Exceptions for "GasPriceWidgetShared" folder in "GasPriceWidgetShared" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			publicHeaders = (
+				GasPriceWidgetShared.h,
+			);
+			target = B34347392CCB934800F95DB2 /* GasPriceWidgetShared */;
+		};
+		B343475D2CCB937F00F95DB2 /* Exceptions for "GasPriceWidgetShared" folder in "Gas prices widget" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Models.swift,
+				NetworkManager.swift,
+			);
+			target = B34346C62CCA553900F95DB2 /* Gas prices widget */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		B34346C92CCA553900F95DB2 /* Gas prices widget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Gas prices widget";
+			sourceTree = "<group>";
+		};
+		B34346DD2CCA553A00F95DB2 /* Gas prices widgetTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Gas prices widgetTests";
+			sourceTree = "<group>";
+		};
+		B34346E72CCA553A00F95DB2 /* Gas prices widgetUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Gas prices widgetUITests";
+			sourceTree = "<group>";
+		};
+		B34347012CCA559E00F95DB2 /* GasPriceWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B343470F2CCA559F00F95DB2 /* Exceptions for "GasPriceWidget" folder in "GasPriceWidgetExtension" target */,
+			);
+			path = GasPriceWidget;
+			sourceTree = "<group>";
+		};
+		B343473B2CCB934800F95DB2 /* GasPriceWidgetShared */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B343475D2CCB937F00F95DB2 /* Exceptions for "GasPriceWidgetShared" folder in "Gas prices widget" target */,
+				B34347542CCB934800F95DB2 /* Exceptions for "GasPriceWidgetShared" folder in "GasPriceWidgetShared" target */,
+			);
+			path = GasPriceWidgetShared;
+			sourceTree = "<group>";
+		};
+		B34347492CCB934800F95DB2 /* GasPriceWidgetSharedTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = GasPriceWidgetSharedTests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B34346C42CCA553900F95DB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B396363B2CD28F7B00707FBB /* GasPriceWidgetShared.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B34346D72CCA553A00F95DB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B34346E12CCA553A00F95DB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B34346F82CCA559E00F95DB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B343475E2CCB951600F95DB2 /* GasPriceWidgetShared.framework in Frameworks */,
+				B34347002CCA559E00F95DB2 /* SwiftUI.framework in Frameworks */,
+				B34346FE2CCA559E00F95DB2 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B34347372CCB934800F95DB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B34347402CCB934800F95DB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B34347442CCB934800F95DB2 /* GasPriceWidgetShared.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B34346BE2CCA553900F95DB2 = {
+			isa = PBXGroup;
+			children = (
+				B39636442CD3ADB100707FBB /* README.md */,
+				B39636422CD3ACFF00707FBB /* .gitignore */,
+				B34346C92CCA553900F95DB2 /* Gas prices widget */,
+				B34346DD2CCA553A00F95DB2 /* Gas prices widgetTests */,
+				B34346E72CCA553A00F95DB2 /* Gas prices widgetUITests */,
+				B34347012CCA559E00F95DB2 /* GasPriceWidget */,
+				B343473B2CCB934800F95DB2 /* GasPriceWidgetShared */,
+				B34347492CCB934800F95DB2 /* GasPriceWidgetSharedTests */,
+				B34346FC2CCA559E00F95DB2 /* Frameworks */,
+				B34346C82CCA553900F95DB2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B34346C82CCA553900F95DB2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B34346C72CCA553900F95DB2 /* Gas prices widget.app */,
+				B34346DA2CCA553A00F95DB2 /* Gas prices widgetTests.xctest */,
+				B34346E42CCA553A00F95DB2 /* Gas prices widgetUITests.xctest */,
+				B34346FB2CCA559E00F95DB2 /* GasPriceWidgetExtension.appex */,
+				B343473A2CCB934800F95DB2 /* GasPriceWidgetShared.framework */,
+				B34347432CCB934800F95DB2 /* GasPriceWidgetSharedTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B34346FC2CCA559E00F95DB2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B34346FD2CCA559E00F95DB2 /* WidgetKit.framework */,
+				B34346FF2CCA559E00F95DB2 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B34347352CCB934800F95DB2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B34346C62CCA553900F95DB2 /* Gas prices widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B34346EE2CCA553A00F95DB2 /* Build configuration list for PBXNativeTarget "Gas prices widget" */;
+			buildPhases = (
+				B34346C32CCA553900F95DB2 /* Sources */,
+				B34346C42CCA553900F95DB2 /* Frameworks */,
+				B34346C52CCA553900F95DB2 /* Resources */,
+				B34347132CCA559F00F95DB2 /* Embed Foundation Extensions */,
+				B396363D2CD28F7B00707FBB /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B343470D2CCA559F00F95DB2 /* PBXTargetDependency */,
+				B343474E2CCB934800F95DB2 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B34346C92CCA553900F95DB2 /* Gas prices widget */,
+			);
+			name = "Gas prices widget";
+			packageProductDependencies = (
+			);
+			productName = "Gas prices widget";
+			productReference = B34346C72CCA553900F95DB2 /* Gas prices widget.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B34346D92CCA553A00F95DB2 /* Gas prices widgetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B34346F12CCA553A00F95DB2 /* Build configuration list for PBXNativeTarget "Gas prices widgetTests" */;
+			buildPhases = (
+				B34346D62CCA553A00F95DB2 /* Sources */,
+				B34346D72CCA553A00F95DB2 /* Frameworks */,
+				B34346D82CCA553A00F95DB2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B34346DC2CCA553A00F95DB2 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B34346DD2CCA553A00F95DB2 /* Gas prices widgetTests */,
+			);
+			name = "Gas prices widgetTests";
+			packageProductDependencies = (
+			);
+			productName = "Gas prices widgetTests";
+			productReference = B34346DA2CCA553A00F95DB2 /* Gas prices widgetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B34346E32CCA553A00F95DB2 /* Gas prices widgetUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B34346F42CCA553A00F95DB2 /* Build configuration list for PBXNativeTarget "Gas prices widgetUITests" */;
+			buildPhases = (
+				B34346E02CCA553A00F95DB2 /* Sources */,
+				B34346E12CCA553A00F95DB2 /* Frameworks */,
+				B34346E22CCA553A00F95DB2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B34346E62CCA553A00F95DB2 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B34346E72CCA553A00F95DB2 /* Gas prices widgetUITests */,
+			);
+			name = "Gas prices widgetUITests";
+			packageProductDependencies = (
+			);
+			productName = "Gas prices widgetUITests";
+			productReference = B34346E42CCA553A00F95DB2 /* Gas prices widgetUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		B34346FA2CCA559E00F95DB2 /* GasPriceWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B34347102CCA559F00F95DB2 /* Build configuration list for PBXNativeTarget "GasPriceWidgetExtension" */;
+			buildPhases = (
+				B34346F72CCA559E00F95DB2 /* Sources */,
+				B34346F82CCA559E00F95DB2 /* Frameworks */,
+				B34346F92CCA559E00F95DB2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B396363A2CD28DF100707FBB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B34347012CCA559E00F95DB2 /* GasPriceWidget */,
+			);
+			name = GasPriceWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = GasPriceWidgetExtension;
+			productReference = B34346FB2CCA559E00F95DB2 /* GasPriceWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		B34347392CCB934800F95DB2 /* GasPriceWidgetShared */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B34347512CCB934800F95DB2 /* Build configuration list for PBXNativeTarget "GasPriceWidgetShared" */;
+			buildPhases = (
+				B34347352CCB934800F95DB2 /* Headers */,
+				B34347362CCB934800F95DB2 /* Sources */,
+				B34347372CCB934800F95DB2 /* Frameworks */,
+				B34347382CCB934800F95DB2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B343473B2CCB934800F95DB2 /* GasPriceWidgetShared */,
+			);
+			name = GasPriceWidgetShared;
+			packageProductDependencies = (
+			);
+			productName = GasPriceWidgetShared;
+			productReference = B343473A2CCB934800F95DB2 /* GasPriceWidgetShared.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B34347422CCB934800F95DB2 /* GasPriceWidgetSharedTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B34347562CCB934800F95DB2 /* Build configuration list for PBXNativeTarget "GasPriceWidgetSharedTests" */;
+			buildPhases = (
+				B343473F2CCB934800F95DB2 /* Sources */,
+				B34347402CCB934800F95DB2 /* Frameworks */,
+				B34347412CCB934800F95DB2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B34347462CCB934800F95DB2 /* PBXTargetDependency */,
+				B34347482CCB934800F95DB2 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B34347492CCB934800F95DB2 /* GasPriceWidgetSharedTests */,
+			);
+			name = GasPriceWidgetSharedTests;
+			packageProductDependencies = (
+			);
+			productName = GasPriceWidgetSharedTests;
+			productReference = B34347432CCB934800F95DB2 /* GasPriceWidgetSharedTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B34346BF2CCA553900F95DB2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					B34346C62CCA553900F95DB2 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					B34346D92CCA553A00F95DB2 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = B34346C62CCA553900F95DB2;
+					};
+					B34346E32CCA553A00F95DB2 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = B34346C62CCA553900F95DB2;
+					};
+					B34346FA2CCA559E00F95DB2 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					B34347392CCB934800F95DB2 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					B34347422CCB934800F95DB2 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = B34346C62CCA553900F95DB2;
+					};
+				};
+			};
+			buildConfigurationList = B34346C22CCA553900F95DB2 /* Build configuration list for PBXProject "Gas prices widget" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B34346BE2CCA553900F95DB2;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B34346C82CCA553900F95DB2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B34346C62CCA553900F95DB2 /* Gas prices widget */,
+				B34346D92CCA553A00F95DB2 /* Gas prices widgetTests */,
+				B34346E32CCA553A00F95DB2 /* Gas prices widgetUITests */,
+				B34346FA2CCA559E00F95DB2 /* GasPriceWidgetExtension */,
+				B34347392CCB934800F95DB2 /* GasPriceWidgetShared */,
+				B34347422CCB934800F95DB2 /* GasPriceWidgetSharedTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B34346C52CCA553900F95DB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B39636432CD3AD0D00707FBB /* .gitignore in Resources */,
+				B39636452CD3ADBB00707FBB /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B34346D82CCA553A00F95DB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B34346E22CCA553A00F95DB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B34346F92CCA559E00F95DB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B34347382CCB934800F95DB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B34347412CCB934800F95DB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B34346C32CCA553900F95DB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B34346D62CCA553A00F95DB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B34346E02CCA553A00F95DB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B34346F72CCA559E00F95DB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B34347362CCB934800F95DB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B343473F2CCB934800F95DB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B34346DC2CCA553A00F95DB2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B34346C62CCA553900F95DB2 /* Gas prices widget */;
+			targetProxy = B34346DB2CCA553A00F95DB2 /* PBXContainerItemProxy */;
+		};
+		B34346E62CCA553A00F95DB2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B34346C62CCA553900F95DB2 /* Gas prices widget */;
+			targetProxy = B34346E52CCA553A00F95DB2 /* PBXContainerItemProxy */;
+		};
+		B343470D2CCA559F00F95DB2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B34346FA2CCA559E00F95DB2 /* GasPriceWidgetExtension */;
+			targetProxy = B343470C2CCA559F00F95DB2 /* PBXContainerItemProxy */;
+		};
+		B34347462CCB934800F95DB2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B34347392CCB934800F95DB2 /* GasPriceWidgetShared */;
+			targetProxy = B34347452CCB934800F95DB2 /* PBXContainerItemProxy */;
+		};
+		B34347482CCB934800F95DB2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B34346C62CCA553900F95DB2 /* Gas prices widget */;
+			targetProxy = B34347472CCB934800F95DB2 /* PBXContainerItemProxy */;
+		};
+		B343474E2CCB934800F95DB2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B34347392CCB934800F95DB2 /* GasPriceWidgetShared */;
+			targetProxy = B343474D2CCB934800F95DB2 /* PBXContainerItemProxy */;
+		};
+		B396363A2CD28DF100707FBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B34347392CCB934800F95DB2 /* GasPriceWidgetShared */;
+			targetProxy = B39636392CD28DF100707FBB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B34346EC2CCA553A00F95DB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B34346ED2CCA553A00F95DB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		B34346EF2CCA553A00F95DB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Gas prices widget/Gas_prices_widget.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Gas prices widget/Preview Content\"";
+				DEVELOPMENT_TEAM = GNNP8TMTN7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Gas-prices-widget-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Gas Prices Widget";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1;
+				OTHER_SWIFT_FLAGS = "-DWIDGET";
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Gas-prices-widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B34346F02CCA553A00F95DB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Gas prices widget/Gas_prices_widget.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Gas prices widget/Preview Content\"";
+				DEVELOPMENT_TEAM = GNNP8TMTN7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Gas-prices-widget-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Gas Prices Widget";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1;
+				OTHER_SWIFT_FLAGS = "-DWIDGET";
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Gas-prices-widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		B34346F22CCA553A00F95DB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GNNP8TMTN7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Gas-prices-widgetTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gas prices widget.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Gas prices widget";
+			};
+			name = Debug;
+		};
+		B34346F32CCA553A00F95DB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GNNP8TMTN7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Gas-prices-widgetTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gas prices widget.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Gas prices widget";
+			};
+			name = Release;
+		};
+		B34346F52CCA553A00F95DB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GNNP8TMTN7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Gas-prices-widgetUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Gas prices widget";
+			};
+			name = Debug;
+		};
+		B34346F62CCA553A00F95DB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GNNP8TMTN7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Gas-prices-widgetUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Gas prices widget";
+			};
+			name = Release;
+		};
+		B34347112CCA559F00F95DB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = GasPriceWidget/GasPriceWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GNNP8TMTN7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GasPriceWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GasPriceWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Gas-prices-widget.GasPriceWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B34347122CCA559F00F95DB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = GasPriceWidget/GasPriceWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GNNP8TMTN7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GasPriceWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GasPriceWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Gas-prices-widget.GasPriceWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		B34347522CCB934800F95DB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = GNNP8TMTN7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Gas-prices-widget.GasPriceWidgetShared";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B34347532CCB934800F95DB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = GNNP8TMTN7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Gas-prices-widget.GasPriceWidgetShared";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B34347572CCB934800F95DB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GNNP8TMTN7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Gas-prices-widget.GasPriceWidgetSharedTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gas prices widget.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Gas prices widget";
+			};
+			name = Debug;
+		};
+		B34347582CCB934800F95DB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GNNP8TMTN7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "None.Gas-prices-widget.GasPriceWidgetSharedTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gas prices widget.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Gas prices widget";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B34346C22CCA553900F95DB2 /* Build configuration list for PBXProject "Gas prices widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B34346EC2CCA553A00F95DB2 /* Debug */,
+				B34346ED2CCA553A00F95DB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B34346EE2CCA553A00F95DB2 /* Build configuration list for PBXNativeTarget "Gas prices widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B34346EF2CCA553A00F95DB2 /* Debug */,
+				B34346F02CCA553A00F95DB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B34346F12CCA553A00F95DB2 /* Build configuration list for PBXNativeTarget "Gas prices widgetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B34346F22CCA553A00F95DB2 /* Debug */,
+				B34346F32CCA553A00F95DB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B34346F42CCA553A00F95DB2 /* Build configuration list for PBXNativeTarget "Gas prices widgetUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B34346F52CCA553A00F95DB2 /* Debug */,
+				B34346F62CCA553A00F95DB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B34347102CCA559F00F95DB2 /* Build configuration list for PBXNativeTarget "GasPriceWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B34347112CCA559F00F95DB2 /* Debug */,
+				B34347122CCA559F00F95DB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B34347512CCB934800F95DB2 /* Build configuration list for PBXNativeTarget "GasPriceWidgetShared" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B34347522CCB934800F95DB2 /* Debug */,
+				B34347532CCB934800F95DB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B34347562CCB934800F95DB2 /* Build configuration list for PBXNativeTarget "GasPriceWidgetSharedTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B34347572CCB934800F95DB2 /* Debug */,
+				B34347582CCB934800F95DB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B34346BF2CCA553900F95DB2 /* Project object */;
+}
