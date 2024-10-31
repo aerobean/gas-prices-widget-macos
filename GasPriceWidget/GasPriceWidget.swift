@@ -110,9 +110,15 @@ struct PricesView: View {
     
     var body: some View {
         VStack(spacing: 12) {
-            Text("Gas Prices")
-                .font(.system(size: 16, weight: .bold))
-                .padding(.top, 2)
+            HStack(spacing: 4) {
+                Image(systemName: "fuelpump.square.fill")
+                    .symbolRenderingMode(.palette)
+                    .foregroundStyle(.white, .blue)
+                    .font(.system(size: 14))
+                Text("Gas Prices")
+                    .font(.system(size: 16, weight: .bold))
+            }
+            .padding(.top, 2)
             
             VStack(spacing: 8) {
                 CryptoRow(
