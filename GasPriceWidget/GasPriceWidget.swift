@@ -1,67 +1,87 @@
 import WidgetKit
 import SwiftUI
 import GasPriceWidgetShared
+import os
+
+// Define logger at file level
+private let widgetLogger = Logger(
+    subsystem: "gas-prices-widget.extension",
+    category: "Widget"
+)
 
 // MARK: - Widget Provider
 
 /// Provides timeline entries for the widget
 struct Provider: TimelineProvider {
+    typealias Entry = GasPriceEntry
+    
     func placeholder(in context: Context) -> GasPriceEntry {
         GasPriceEntry(
             date: Date(),
-            ethGas: GasPrice(safeLow: 30, standard: 45, fast: 60),
-            btcFee: BtcFee(fastestFee: 15, halfHourFee: 12, hourFee: 10),
-            solGas: SolPrice(current: 0.00025),
-            state: .success
+            ethGas: GasPrice(safeLow: 0, standard: 0, fast: 0),
+            btcFee: BtcFee(fastestFee: 0, halfHourFee: 0, hourFee: 0),
+            solGas: SolPrice(current: 0),
+            state: .loading
         )
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (GasPriceEntry) -> ()) {
+    func getSnapshot(in context: Context, completion: @escaping (GasPriceEntry) -> Void) {
         Task {
-            let entry = try? await fetchEntry()
-            completion(entry ?? placeholder(in: context))
+            do {
+                let prices = try await NetworkManager.shared.fetchAllPrices()
+                let entry = GasPriceEntry(
+                    date: Date(),
+                    ethGas: prices.ethGas,
+                    btcFee: prices.btcFee,
+                    solGas: prices.solGas,
+                    state: .success
+                )
+                completion(entry)
+            } catch {
+                completion(GasPriceEntry(
+                    date: Date(),
+                    ethGas: GasPrice(safeLow: 0, standard: 0, fast: 0),
+                    btcFee: BtcFee(fastestFee: 0, halfHourFee: 0, hourFee: 0),
+                    solGas: SolPrice(current: 0),
+                    state: .error(error.localizedDescription)
+                ))
+            }
         }
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<GasPriceEntry>) -> ()) {
+        widgetLogger.debug("Starting timeline fetch...")
         Task {
             do {
-                let entry = try await fetchEntry()
-                let nextUpdate = Calendar.current.date(byAdding: .minute, value: 10, to: Date())!
-                let timeline = Timeline(
-                    entries: [entry],
-                    policy: .after(nextUpdate)
+                widgetLogger.debug("Fetching prices...")
+                let prices = try await NetworkManager.shared.fetchAllPrices()
+                widgetLogger.debug("Prices fetched successfully")
+                
+                let entry = GasPriceEntry(
+                    date: Date(),
+                    ethGas: prices.ethGas,
+                    btcFee: prices.btcFee,
+                    solGas: prices.solGas,
+                    state: .success
                 )
+                
+                let nextUpdate = Date().addingTimeInterval(600)
+                widgetLogger.debug("Next update scheduled for: \(nextUpdate.description)")
+                
+                let timeline = Timeline(entries: [entry], policy: .after(nextUpdate))
                 completion(timeline)
             } catch {
-                print("Timeline error: \(error.localizedDescription)")
-                let errorEntry = GasPriceEntry(
+                widgetLogger.error("Error fetching prices: \(error.localizedDescription)")
+                let entry = GasPriceEntry(
                     date: Date(),
                     ethGas: GasPrice(safeLow: 0, standard: 0, fast: 0),
                     btcFee: BtcFee(fastestFee: 0, halfHourFee: 0, hourFee: 0),
                     solGas: SolPrice(current: 0),
                     state: .error(error.localizedDescription)
                 )
-                let nextRetry = Calendar.current.date(byAdding: .minute, value: 5, to: Date())!
-                let timeline = Timeline(entries: [errorEntry], policy: .after(nextRetry))
+                let timeline = Timeline(entries: [entry], policy: .after(Date().addingTimeInterval(60)))
                 completion(timeline)
             }
-        }
-    }
-    
-    private func fetchEntry() async throws -> GasPriceEntry {
-        do {
-            let prices = try await NetworkManager.shared.fetchAllPrices()
-            return GasPriceEntry(
-                date: Date(),
-                ethGas: prices.ethGas,
-                btcFee: prices.btcFee,
-                solGas: prices.solGas,
-                state: .success
-            )
-        } catch {
-            print("Network error: \(error.localizedDescription)")
-            throw error
         }
     }
 }
@@ -92,13 +112,15 @@ struct GasPriceWidgetEntryView : View {
     var entry: Provider.Entry
     
     var body: some View {
-        switch entry.state {
-        case .loading:
-            LoadingView()
-        case .error(let message):
-            ErrorView(message: message)
-        case .success:
-            PricesView(entry: entry)
+        Group {
+            switch entry.state {
+            case .loading:
+                LoadingView()
+            case .error(let message):
+                ErrorView(message: message)
+            case .success:
+                PricesView(entry: entry)
+            }
         }
     }
 }
@@ -106,7 +128,7 @@ struct GasPriceWidgetEntryView : View {
 /// View displaying all cryptocurrency prices
 struct PricesView: View {
     @Environment(\.colorScheme) var colorScheme
-    var entry: Provider.Entry
+    var entry: GasPriceEntry
     
     var body: some View {
         VStack(spacing: 12) {
@@ -121,30 +143,27 @@ struct PricesView: View {
             .padding(.top, 2)
             
             VStack(spacing: 8) {
+                let priceUnit = UserPreferences.shared.priceUnit
+                
                 CryptoRow(
-                    symbol: "₿", // Bitcoin symbol
-                    price: entry.btcFee.displayPrice,
+                    symbol: "₿",
+                    price: priceUnit.format(entry.btcFee.displayPrice, for: .bitcoin),
                     unit: "sat/vB"
                 )
                 
                 CryptoRow(
-                    symbol: "Ξ", // Ethereum symbol
-                    price: entry.ethGas.displayPrice,
+                    symbol: "Ξ",
+                    price: priceUnit.format(entry.ethGas.displayPrice, for: .ethereum),
                     unit: "gwei"
                 )
                 
                 CryptoRow(
-                    symbol: "◎", // Solana symbol
-                    price: entry.solGas.displayPrice,
-                    unit: "USD"
+                    symbol: "◎",
+                    price: priceUnit.format(entry.solGas.displayPrice, for: .solana),
+                    unit: "SOL"
                 )
             }
             .padding(.horizontal, 8)
-            
-            Text(entry.date, style: .time)
-                .font(.system(size: 12))
-                .foregroundColor(.secondary)
-                .padding(.bottom, 2)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(colorScheme == .dark ? Color.black : Color.white)
@@ -153,7 +172,7 @@ struct PricesView: View {
 
 struct CryptoRow: View {
     let symbol: String
-    let price: Double
+    let price: String
     let unit: String
     
     var body: some View {
@@ -162,7 +181,7 @@ struct CryptoRow: View {
                 .font(.system(size: 16, weight: .bold))
                 .frame(width: 24)
             
-            Text(formattedPrice)
+            Text(price)
                 .font(.system(size: 16, weight: .medium))
                 .frame(maxWidth: .infinity, alignment: .leading)
             
@@ -171,56 +190,32 @@ struct CryptoRow: View {
                 .foregroundColor(.secondary)
         }
     }
-    
-    private var formattedPrice: String {
-        if price < 10 {
-            return String(format: "%.2f", price)
-        } else if price < 100 {
-            return String(format: "%.1f", price)
-        } else {
-            return String(format: "%.0f", price)
-        }
-    }
 }
 
 struct LoadingView: View {
-    @Environment(\.colorScheme) var colorScheme
-    
     var body: some View {
-        VStack(spacing: 8) {
+        VStack {
             ProgressView()
-                .scaleEffect(0.8)
-            
             Text("Loading...")
-                .font(.system(size: 12))
-                .foregroundColor(.secondary)
+                .font(.caption)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(colorScheme == .dark ? Color.black : Color.white)
     }
 }
 
 struct ErrorView: View {
-    var message: String
-    @Environment(\.colorScheme) var colorScheme
+    let message: String
     
     var body: some View {
         VStack(spacing: 4) {
             Image(systemName: "exclamationmark.triangle")
-                .font(.system(size: 16))
-            
             Text("Error")
-                .font(.system(size: 14, weight: .bold))
-            
+                .font(.caption.bold())
             Text(message)
-                .font(.system(size: 12))
+                .font(.caption2)
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
         }
-        .foregroundColor(.red)
-        .padding(8)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(colorScheme == .dark ? Color.black : Color.white)
+        .padding()
     }
 }
 
@@ -231,14 +226,27 @@ struct GasPriceWidget: Widget {
     let kind: String = "GasPriceWidget"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(
-            kind: kind,
-            provider: Provider()
-        ) { entry in
-            GasPriceWidgetEntryView(entry: entry)
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+            Group {
+                switch entry.state {
+                case .loading:
+                    LoadingView()
+                case .success:
+                    if #available(macOS 14.0, *) {
+                        PricesView(entry: entry)
+                            .containerBackground(.background, for: .widget)
+                    } else {
+                        PricesView(entry: entry)
+                            .padding()
+                            .background()
+                    }
+                case .error(let message):
+                    ErrorView(message: message)
+                }
+            }
         }
-        .configurationDisplayName("Crypto Gas Prices")
-        .description("Track ETH, BTC, and SOL gas prices")
+        .configurationDisplayName("Gas Prices")
+        .description("Shows current gas prices for BTC, ETH, and SOL")
         .supportedFamilies([.systemSmall])
     }
 }

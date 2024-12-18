@@ -2,6 +2,7 @@
 import WidgetKit
 #endif
 import Foundation
+import os
 
 /// Represents possible network-related errors that can occur during API requests
 public enum NetworkError: Error, CustomStringConvertible {
@@ -33,6 +34,12 @@ public class NetworkManager {
     public static let shared = NetworkManager()
     private let session: URLSession
     
+    // Define logger at file level
+    private let networkLogger = Logger(
+        subsystem: Bundle.main.bundleIdentifier ?? "com.GasPriceWidget",
+        category: "Network"
+    )
+    
     private init() {
         // Configure URLSession for optimal widget performance
         let config = URLSessionConfiguration.ephemeral
@@ -56,19 +63,26 @@ public class NetworkManager {
     /// - Returns: Combined gas prices for ETH, BTC, and SOL
     /// - Throws: NetworkError if any request fails
     public func fetchAllPrices() async throws -> GasPrices {
-        return try await Task.detached(priority: .userInitiated) {
+        networkLogger.debug("Starting price fetch...")
+        do {
+            networkLogger.debug("Fetching ETH price...")
             async let ethPrice = self.fetchEthGasPrice()
+            networkLogger.debug("Fetching BTC price...")
             async let btcPrice = self.fetchBtcFee()
+            networkLogger.debug("Fetching SOL price...")
             async let solPrice = self.fetchSolGas()
             
-            do {
-                let (eth, btc, sol) = try await (ethPrice, btcPrice, solPrice)
-                return GasPrices(ethGas: eth, btcFee: btc, solGas: sol)
-            } catch {
-                print("Fetch error: \(error.localizedDescription)")
-                throw error
-            }
-        }.value
+            let prices = try await GasPrices(
+                ethGas: ethPrice,
+                btcFee: btcPrice,
+                solGas: solPrice
+            )
+            networkLogger.debug("All prices fetched successfully")
+            return prices
+        } catch {
+            networkLogger.error("Error in fetchAllPrices: \(error.localizedDescription)")
+            throw error
+        }
     }
     
     /// Fetches current Ethereum gas prices from Etherscan API
@@ -123,12 +137,25 @@ public class NetworkManager {
     /// - Returns: Current SOL price in USD
     /// - Throws: NetworkError if request fails
     private func fetchSolGas() async throws -> SolPrice {
-        let urlString = "https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd"
+        // Solana RPC endpoint
+        let urlString = "https://api.mainnet-beta.solana.com"
         guard let url = URL(string: urlString) else {
             throw NetworkError.invalidURL
         }
         
-        let request = createURLRequest(url: url)
+        // Request recent block production stats
+        let requestBody: [String: Any] = [
+            "jsonrpc": "2.0",
+            "id": 1,
+            "method": "getRecentPerformanceSamples",
+            "params": [1]
+        ]
+        
+        var request = createURLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try? JSONSerialization.data(withJSONObject: requestBody)
+        
         let (data, response) = try await session.data(for: request)
         
         guard let httpResponse = response as? HTTPURLResponse else {
@@ -139,16 +166,23 @@ public class NetworkManager {
             throw NetworkError.invalidResponse(httpResponse.statusCode)
         }
         
-        struct CoinGeckoResponse: Codable {
-            let solana: SolanaPrice
-            
-            struct SolanaPrice: Codable {
-                let usd: Double
+        struct SolanaResponse: Codable {
+            struct Sample: Codable {
+                let numSlots: Int
+                let numTransactions: Int
+                let samplePeriodSecs: Int
             }
+            let result: [Sample]
         }
         
-        let result = try JSONDecoder().decode(CoinGeckoResponse.self, from: data)
-        return SolPrice(current: result.solana.usd)
+        let result = try JSONDecoder().decode(SolanaResponse.self, from: data)
+        if let sample = result.result.first {
+            // Calculate average gas price from recent block stats
+            let avgGasPrice = Double(sample.numTransactions) / Double(sample.samplePeriodSecs)
+            return SolPrice(current: avgGasPrice)
+        }
+        
+        throw NetworkError.apiError("No data available")
     }
     
     /// Creates a configured URLRequest with standard parameters

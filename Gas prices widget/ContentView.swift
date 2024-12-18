@@ -6,48 +6,35 @@
 //
 
 import SwiftUI
-import SwiftData
+import GasPriceWidgetShared
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-
+    @State private var showingSettings = false
+    @StateObject private var preferences = PreferencesObserver()
+    
     var body: some View {
         NavigationSplitView {
             List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
+                Button {
+                    showingSettings.toggle()
+                } label: {
+                    Label("Settings", systemImage: "gear")
                 }
-                .onDelete(perform: deleteItems)
-            }
-            .navigationSplitViewColumnWidth(min: 180, ideal: 200)
-            .toolbar {
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
+                .sheet(isPresented: $showingSettings) {
+                    SettingsView()
                 }
+                
+                Text("Selected Unit: \(preferences.priceUnit.displaySymbol)")
+                    .foregroundColor(.secondary)
             }
+            .navigationTitle("Gas Prices Widget")
         } detail: {
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
+            VStack {
+                Image(systemName: "arrow.left")
+                    .font(.largeTitle)
+                    .foregroundColor(.secondary)
+                Text("Select an option from the sidebar")
+                    .foregroundColor(.secondary)
             }
         }
     }
